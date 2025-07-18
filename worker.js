@@ -786,8 +786,8 @@ class TelegramManager {
     const emoji = this.forumEmoji[summary.forum] || '📢';
     const postType = summary.post_type || '其他';
 
-    // 生成标签，基于论坛来源
-    const tag = this.generateHashTag(summary.forum);
+    // 生成标签，基于论坛来源和帖子类型
+    const tag = this.generateHashTag(summary.forum, postType);
 
     // HTML转义函数
     const escapeHtml = (text) => {
@@ -807,12 +807,22 @@ class TelegramManager {
 ${tag}`;
   }
 
-  generateHashTag(forum) {
+  generateHashTag(forum, postType) {
     // 根据论坛来源生成对应的标签，保持完整的RSS名称
+    let tags = [];
+
     if (forum) {
-      return `#${forum}`;
+      tags.push(`#${forum}`);
+    } else {
+      tags.push('#Unknown');
     }
-    return '#Unknown';
+
+    // 根据帖子类型添加标签
+    if (postType) {
+      tags.push(`#${postType}`);
+    }
+
+    return tags.join(' ');
   }
 
   async sendMessage(config, message) {
