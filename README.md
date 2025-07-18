@@ -42,7 +42,7 @@
 |--------|---|------|------|
 | `ADMIN_PASSWORD` | `your-secure-password` | Text | 管理后台密码（必需） |
 
-添加变量后都点击 **Save and deploy**
+添加变量后点击 **Save and deploy**
 
 ### 第六步：配置定时触发器
 1. 进入 **Triggers** 标签页
@@ -104,7 +104,7 @@
 |------|-------|------|
 | LET General | `lowendtalk.com/categories/general/feed.rss` | LowEndTalk综合讨论 |
 | LET Offers | `lowendtalk.com/categories/offers/feed.rss` | LowEndTalk优惠信息 |
-| LET Request | `talk.lowendspirit.com/discussions/feed.rss` | LowEndTalk需求讨论 |
+| LET Discussions | `talk.lowendspirit.com/discussions/feed.rss` | LowEndTalk需求讨论 |
 | LEB | `lowendbox.com/feed/` | LowEndBox VPS评测 |
 | LES | `lowendspirit.com/discussions/feed.rss` | LowEndSpirit讨论 |
 
